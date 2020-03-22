@@ -8,9 +8,9 @@ predict Oscar winner with ML and DNN
 
 * * *
 
-    [데이터 수집 및 가공 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_data.ipynb)  
-    [EDA 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_EDA.ipynb)  
-    [작품상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_best.ipynb)  
+[데이터 수집 및 가공 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_data.ipynb)  
+[EDA 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_EDA.ipynb)  
+[작품상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_best.ipynb)  
 
 
 
