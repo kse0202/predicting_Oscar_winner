@@ -29,6 +29,8 @@ predict Oscar winner with ML and DNN
 * 여우주연상에서 여성이 거의 출연하지 않는 장르(Western, War)는 노미네이션 횟수, 수상 횟수가 적다.
 * 여우주연상은 Comedy,Romance 장르에서 많이 노미네이션되고, 수상된다.
 * 전 부문에서 History장르는 노미네이션 횟수 대비 수상 횟수가 많다.
+### 부문별 수상과 상관도가 높은 feature (heatmap)
+![ex_screenshot](./img/heatmap.png)  
 ### 부문별 feature에 따른 데이터 분포 (boxplot)
 ![ex_screenshot](./img/boxplot.png)  
 * 부문별 feature에 따른 데이터의 분포를 boxplot으로 확인한 결과 수상한 작품들의 박스가 수상하지 않을 것 보다 높이 위치한다는 것을 볼 수 있다. 대체적으로 평가지표가 높으면 수상 할 확률이 높다는 것을 의미한다.
