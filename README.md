@@ -31,6 +31,11 @@ predict Oscar winner with ML and DNN
 * 전 부문에서 History장르는 노미네이션 횟수 대비 수상 횟수가 많다.
 ### 부문별 수상과 상관도가 높은 feature (heatmap)
 ![ex_screenshot](./img/heatmap.png)  
+* 전부문에서 강한 상관관계를 가진 feature는 없다.
+* 각 부문별로 상관관계가 높은 feature는 다 다르다.
+* 전부문에서 Awards, imdb, imdbVotes 의 상관관계가 상대적으로 높다.
+* 감독상은 대중이 평가하는 feature들의 상관관계가 높다. 이 피쳐들로 예측하면 (Gross, imdb, Awards, imdbVotes) 좋다.
+* 감독상과 westurn 장르의 상관도가 높다.
 ### 부문별 feature에 따른 데이터 분포 (boxplot)
 ![ex_screenshot](./img/boxplot.png)  
 * 부문별 feature에 따른 데이터의 분포를 boxplot으로 확인한 결과 수상한 작품들의 박스가 수상하지 않을 것 보다 높이 위치한다는 것을 볼 수 있다. 대체적으로 평가지표가 높으면 수상 할 확률이 높다는 것을 의미한다.
