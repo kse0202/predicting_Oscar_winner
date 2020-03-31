@@ -15,8 +15,8 @@ predict Oscar winner with ML and DNN
 * 한 해의 수상작은 1개이다. 노미네이션은 5~8작품. 불균형 데이터이다. 
 ### 월별 수상작과 노미네이션 영화 수 
 ![ex_screenshot](./img/nomination_month.png)  
-노미네이션된 작품들과 수상된 작품들의 월별 분포를 그린 barplot이다.  
-전 부문 겨울(10월-2월)에 개봉된 작품들이 많고, 그에 비례하여 수상하는 것으로 보인다.  
+* 노미네이션된 작품들과 수상된 작품들의 월별 분포를 그린 barplot이다.  
+* 전 부문 겨울(10월-2월)에 개봉된 작품들이 많고, 그에 비례하여 수상하는 것으로 보인다.  
 ### 장르별 수상작과 노미네이션 영화 수 
 ![ex_screenshot](./img/nomination_genre.png)  
 * 거의 모든 영화가 Drama 장르를 포함하고 있다.
