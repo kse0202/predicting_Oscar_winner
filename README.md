@@ -61,11 +61,13 @@ predict Oscar winner with ML and DNN
 
 ## Modeling
 * 다양한 분류 모델 `Decision Tree`, `GradientBoostingClassifier`, `XGBClassifier`, `LGBMClassifier`, `RandomForestClassifier`, `LogisticRegression`, `SVM(Support Vector Machine)` 그리고 `tensorflow.keras`를 이용하여 `DNN`으로 분류 모델을 만들었습니다.
+* 앙상블(Ensemble)기법인 `VotingClassifier`, `BaggingClassifier` 그리고 `Stacking`으로 여러 모델들을 합쳐 더 나은 모델을 만들어 보았습니다.
 * 불균형 데이터 문제를 해결하기 위해 `SMOTE(Synthetic Minority Over-sampling Technique)`, `StratifiedKFold` 을 사용하였습니다.
-* `VotingClassifier`, `BaggingClassifier` 그리고 `Stacking 기법`으로 여러 모델들을 합쳐 더 나은 모델을 만들어 보았습니다. 
-* DNN에서 loss와 val_loss의 변화를 이용하여 최적의 가중치를 찾고, `callback`을 이용하여 가중치를 불러와 사용했습니다. 
+* DNN에서 loss와 val_loss의 변화를 이용하여 최적의 가중치를 찾고, `callbacks`을 이용하여 가중치를 불러와 사용했습니다. 
+* DNN에 Metrics 에 f1 score가 없어 임의로 정의해서 사용했습니다. 
 * Stacking에서 사용한 모델은 XGBoost입니다. 
 * 불균형 데이터의 분류 평가 기준으로 f1 score를 사용했습니다. 
+
 ### 평가 기준 = f1 Score
 |사용 모델|작품상|감독상|각본상|남우주연상|여우주연상
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -92,7 +94,9 @@ predict Oscar winner with ML and DNN
 * 데이터 시각화에서 특징이 있었던 수상 부문(감독상)은 전체적으로 f1 score가 높은 것을 알 수 있었습니다. 
 * 적은 양으로 DNN 모델을 돌리는 과정에서 overfitting으로 인해 f1 score의 값이 높은 가능성이 있습니다. 
 * Voting은 데이터마다 hard, soft, soft-weighted 의 값이 다른 것을 보아, 모두 이용해 최적의 모델을 만드는 것이 중요하다는 것을 알 수 있습니다. 
+* DNN은 sklearn의 classifier가 아니라 VotingClassifier의 estimators로 사용 할 수 없었습니다. 
 * Bagging은 샘플을 여러번 뽑아 모델에 학습시켜 나온 결과를 집계하여 분류하는 모델로, 가중치를 통해 최적의 모델을 만드는 boosting 모델을 이용하는 것이 효과적이라 생각했으나 LogisticReggrestion을 이용한 bagging이 예측이 높은 부문도 있었습니다. 
+* 앞서 만들었던 ML모델과 DNN모델 모두 이용 하여 Stacking모델을 만들었다. 그 결과 절대적으로 높은 f1 score를 보인다. 부족한 데이터를 보완하기 위한 좋은 기법입니다. 
 
 ## Shortcuts
 [데이터 수집 및 가공 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_data.ipynb)  
