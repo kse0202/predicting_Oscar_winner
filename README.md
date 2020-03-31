@@ -60,16 +60,49 @@ predict Oscar winner with ML and DNN
 * 그 외에 feature들은 상관관계를 보이고 있지 않다.
 
 ## Modeling
+* 다양한 분류 모델 `Decision Tree`, `GradientBoostingClassifier`, `XGBClassifier`, `LGBMClassifier`, `RandomForestClassifier`, `LogisticRegression`, `SVM(Support Vector Machine)` 그리고 `tensorflow.keras`를 이용하여 `DNN`으로 분류 모델을 만들었습니다.
+* 불균형 데이터 문제를 해결하기 위해 `SMOTE(Synthetic Minority Over-sampling Technique)`, `StratifiedKFold` 을 사용하였습니다.
+* `VotingClassifier`, `BaggingClassifier` 그리고 `Stacking 기법`으로 여러 모델들을 합쳐 더 나은 모델을 만들어 보았습니다. 
+* DNN에서 loss와 val_loss의 변화를 이용하여 최적의 가중치를 찾고, `callback`을 이용하여 가중치를 불러와 사용했습니다. 
+* Stacking에서 사용한 모델은 XGBoost입니다. 
+* 불균형 데이터의 분류 평가 기준으로 f1 score를 사용했습니다. 
+### 평가 기준 = f1 Score
+|사용 모델|작품상|감독상|각본상|남우주연상|여우주연상
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|DecisionTreeClassifier|0.3636|0.5128|0.3881|0.3810| 0.3125|
+|GradientBoostingClassifier|0.4615|0.6087|0.5128|0.2857|0.1667|
+|XGBClassifier|0.5600|0.6667|0.4615|0.5000|0.1818|
+|LGBMClassifier|0.5600|0.7200|0.5116| 0.3000|0.2500|
+|RandomForestClassifie| 0.4800|0.5714|0.4103|0.4348|0.2857|
+|RandomForestClassifie-top7| 0.3077| 0.4762|0.3913|0.2857|0.3636|
+|LogisticRegression|0.3571|0.5455|0.5238|0.3448|0.4348|
+|SVC|0.1176|0.3636|0.2222|0.2222|0.2941|
+|DNN|0.8125|0.6080|0.5885|0.7770|0.7315|
+|Hard Voting|0.5926|0.6667|0.4762|0.3636|0.2963|
+|Soft Voting |0.6087|0.6667|0.4878|0.4000|0.2308|
+|Soft-weighted Voting |0.5833|0.6667|0.4878|0.3810|0.2308|
+|XGBC Bagging | 0.5185|0.6154|0.4651| 0.4167|0.2308|
+|LRC Bagging |0.4800|0.5714|0.4737|0.3448| 0.2727|
+|Stacking |0.9000| 0.8800|0.7568|0.7059 |0.4000|
+
+## Conclusion
+* 전체적으로 예측률이 50%를 넘기기 어려운 것을 볼 수 있었습니다. 
+* 수상과 특별히 연관있는 feature를 찾지 못한 점, 데이터의 양이 작았던 것이 가장 문제라고 생각됩니다. 
+* 데이터의 양이 적어서 오버샘플링, 부트스트랩을 활용한 모델을 사용했으나 그 과정에서 overfitting이 되었을 가능성이 있습니다.  
+* 데이터 시각화에서 특징이 있었던 수상 부문(감독상)은 전체적으로 f1 score가 높은 것을 알 수 있었습니다. 
+* 적은 양으로 DNN 모델을 돌리는 과정에서 overfitting으로 인해 f1 score의 값이 높은 가능성이 있습니다. 
+* Voting은 데이터마다 hard, soft, soft-weighted 의 값이 다른 것을 보아, 모두 이용해 최적의 모델을 만드는 것이 중요하다는 것을 알 수 있습니다. 
+* Bagging은 샘플을 여러번 뽑아 모델에 학습시켜 나온 결과를 집계하여 분류하는 모델로, 가중치를 통해 최적의 모델을 만드는 boosting 모델을 이용하는 것이 효과적이라 생각했으나 LogisticReggrestion을 이용한 bagging이 예측이 높은 부문도 있었습니다. 
 
 ## Shortcuts
 [데이터 수집 및 가공 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_data.ipynb)  
 [EDA 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_EDA.ipynb)  
 
-[작품상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_best.ipynb) 
-[감독상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_direct.ipynb) 
-[각본상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_write.ipynb) 
-[남우주연상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_actor.ipynb) 
-[여우주연상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_actress.ipynb) 
+[작품상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_best.ipynb)   
+[감독상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_direct.ipynb)   
+[각본상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_write.ipynb)   
+[남우주연상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_actor.ipynb)   
+[여우주연상 모델링 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_model_actress.ipynb)   
 
 
 
