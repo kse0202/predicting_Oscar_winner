@@ -83,7 +83,7 @@ predict Oscar winner with ML and DNN
 |Soft-weighted Voting |0.5833|0.6667|0.4878|0.3810|0.2308|
 |XGBC Bagging | 0.5185|0.6154|0.4651| 0.4167|0.2308|
 |LRC Bagging |0.4800|0.5714|0.4737|0.3448| 0.2727|
-|Stacking |0.9000| 0.8800|0.7568|0.7059 |0.4000|
+|Stacking-XGBoost |0.9000| 0.8800|0.7568|0.7059 |0.4000|
 
 ## Conclusion
 * 전체적으로 예측률이 50%를 넘기기 어려운 것을 볼 수 있었습니다. 
