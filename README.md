@@ -37,7 +37,12 @@ predict Oscar winner with ML and DNN
 * 감독상은 대중이 평가하는 feature들의 상관관계가 높다. 이 피쳐들로 예측하면 (Gross, imdb, Awards, imdbVotes) 좋다.
 * 감독상과 westurn 장르의 상관도가 높다.
 ### 부문별 feature에 따른 데이터 분포 (boxplot)
+![ex_screenshot](./img/boxplot_imdb.png)  
 ![ex_screenshot](./img/boxplot.png)  
+![ex_screenshot](./img/boxplot_metacr.png)
+![ex_screenshot](./img/boxplot_nominat.png)  
+![ex_screenshot](./img/boxplot_awards.png)  
+![ex_screenshot](./img/boxplot_gross.png)  
 * 부문별 feature에 따른 데이터의 분포를 boxplot으로 확인한 결과 수상한 작품들의 박스가 수상하지 않을 것 보다 높이 위치한다는 것을 볼 수 있다. 대체적으로 평가지표가 높으면 수상 할 확률이 높다는 것을 의미한다.
 * Heatmap에서 확인했던 상관도가 높은 imdb, imdbVotes, Awards에서 boxplot을 볼 때, 수상한 경우 IQR 범위가 넓고 박스가 높이 위치한 것을 볼 수 있다.
 * 상관도가 낮았던 Rotten tomato에서 가져온 데이터인 tomato meter, rotten tomato meter의 값은 수상 여부에 따른 박스의 크기나 높이 차이가 상대적으로 없다.
