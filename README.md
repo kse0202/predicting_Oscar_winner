@@ -40,7 +40,7 @@ predict Oscar winner with ML and DNN
 ![ex_screenshot](./img/boxplot_imdb.png)  
 ![ex_screenshot](./img/boxplot.png)  
 ![ex_screenshot](./img/boxplot_metacr.png)
-![ex_screenshot](./img/boxplot_nominat.png)  
+![ex_screenshot](./img/boxplot_nomination.png)  
 ![ex_screenshot](./img/boxplot_awards.png)  
 ![ex_screenshot](./img/boxplot_gross.png)  
 * 부문별 feature에 따른 데이터의 분포를 boxplot으로 확인한 결과 수상한 작품들의 박스가 수상하지 않을 것 보다 높이 위치한다는 것을 볼 수 있다. 대체적으로 평가지표가 높으면 수상 할 확률이 높다는 것을 의미한다.
