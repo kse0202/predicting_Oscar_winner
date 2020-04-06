@@ -78,7 +78,7 @@ predict Oscar winner with ML and DNN
 * DNN에서 loss와 val_loss의 변화를 이용하여 최적의 가중치를 찾고, `callbacks`을 이용하여 가중치를 불러와 사용했습니다. 
 * DNN에 Metrics 에 precision이 없어 직접 정의해서 사용했습니다. 
 * Stacking에서 사용한 모델은 XGBoost입니다. 
-* 분류 평가 기준으로 precision_score를 사용했습니다. 
+* 분류 평가 기준으로 True라고 예측한 것들 중에 실제로 True인 것의 비율인 precision_score를 사용했습니다. 
 
 ### 평가 기준 = precision_score
 |사용 모델|작품상|감독상|각본상|남우주연상|여우주연상
