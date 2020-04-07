@@ -108,7 +108,7 @@ predict Oscar winner with ML and DNN
 * Voting은 데이터마다 hard, soft, soft-weighted 의 값이 다른 것을 보아, 모두 이용해 최적의 모델을 만드는 것이 중요하다는 것을 알 수 있습니다. 
 * DNN은 sklearn의 classifier가 아니라 VotingClassifier의 estimators로 사용 할 수 없었습니다. 
 * Bagging은 샘플을 여러번 뽑아 모델에 학습시켜 나온 결과를 집계하여 분류하는 모델로, 가중치를 통해 최적의 모델을 만드는 boosting 모델을 이용하는 것이 효과적이라 생각했으나 LogisticReggrestion을 이용한 bagging이 예측이 높은 부문도 있었습니다. 
-* 앞서 만들었던 ML모델과 DNN모델 모두 이용 하여 Stacking모델을 만들었을 때, 1에 가까운 점수가 나오는 것을 보아 overfitting되었을 가능성이 있으나, 가능 높은 점수 내는 것을 알 수 있습니다. 
+* 앞서 만들었던 ML모델과 DNN모델 모두 이용 하여 Stacking모델을 만들었을 때, 1에 가까운 점수가 나오는 것을 보아 overfitting되었을 가능성이 있으나, 가장 높은 점수 내는 것을 알 수 있습니다. 
 
 ## Shortcuts
 [데이터 수집 및 가공 바로가기](https://github.com/kse0202/predicting_Oscar_winner/blob/master/oscar_data.ipynb)  
